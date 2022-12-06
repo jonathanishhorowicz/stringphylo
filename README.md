@@ -6,7 +6,18 @@ Clone this directory and use the command `python setup.py install`.
 
 # Requirements
 
-See the [requirements](requirements.txt). 
+The code requires Python 3.7 or above, as well as:
+
+* gpflow
+* numpy
+* pandas
+* scikit_bio
+* scikit_learn
+* scipy
+* setuptools
+* tensorflow
+
+The code is test aginst the pakage versions in [requirements](requirements.txt).
 
 # Relevant Citations
 
