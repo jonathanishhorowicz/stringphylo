@@ -1,0 +1,8 @@
+gpflow==2.3.0
+numpy==1.18.5
+pandas==1.2.4
+scikit_bio==0.5.7
+scikit_learn==1.1.3
+scipy==1.7.0
+setuptools==49.6.0.post20210108
+tensorflow==2.3.1
