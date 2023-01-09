@@ -29,9 +29,9 @@ The code is test aginst the package versions in [requirements](requirements.txt)
 
 Please see the [examples](examples) for tutorials on
 
-* (Gaussian process regression)[examples/Supervised_learning_with_GPs.ipynb] using string kernels, including hyperparameter selection
-* (The kernel two-sample test)[examples/MMD two-sample testing.ipynb] using string kernels
-* (Computing string kernels)[examples/Computing String Kernels.ipynb] in `StringPhylo`.
+* [Gaussian process regression](examples/Supervised_learning_with_GPs.ipynb) using string kernels, including hyperparameter selection
+* [The kernel two-sample test](examples/MMD_two-sample_testing.ipynb) using string kernels
+* [Computing string kernels](examples/Computing_String_Kernels.ipynb) in `StringPhylo`.
 
 # Relevant Citations
 
