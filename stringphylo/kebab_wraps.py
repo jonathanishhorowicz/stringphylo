@@ -39,8 +39,8 @@ def requires_kebabs(func):
     if not _string_kernel_comp_avail:
         raise ImportError("String kernel computation is not available")
 
-    def wrapper(func):
-        func()
+    def wrapper(*args, **kwargs):
+        return func(*args, **kwargs)
 
     return wrapper
 
@@ -57,8 +57,8 @@ def mismatch_kernel(k=3, m=1, normalized=True, exact=True, **kwargs):
     return kebabs.mismatchKernel(k=k, m=m, normalized=normalized, exact=exact, **kwargs)
 
 @requires_kebabs
-def compute_kernel(kern_obj, repr_strings):
-    """Compute the string kernel Q matrix on the representative strings
+def compute_Smat(kern_obj, repr_strings):
+    """Compute the string kernel S (or Q) matrix on the representative strings
     
     Args:
         kern_obj (rpy2.robjects.functions.SignatureTranslatedFunction): an R object representing
@@ -67,7 +67,7 @@ def compute_kernel(kern_obj, repr_strings):
         repr_strings (list, np.ndarray or pd.Series): the representative sequences
 
     Returns:
-        A DataFrame containing the Q matrix (size p x p for p OTUs). The OTU names are taken 
+        A DataFrame containing the S (or Q) matrix (size p x p for p OTUs). The OTU names are taken 
         from the index of repr_strings if it is a pd.Series or given as OTU0, OTU1, ... otherwise
     """
     if isinstance(repr_strings, pd.Series):
