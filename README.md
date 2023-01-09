@@ -17,7 +17,21 @@ The code requires Python 3.7 or above, as well as:
 * setuptools
 * tensorflow
 
-The code is test aginst the pakage versions in [requirements](requirements.txt).
+In addition, the string kernels computations themselves rely on the [kebabs R package](https://bioconductor.org/packages/release/bioc/html/kebabs.html), which is accessed through `rpy2`. So unless you have pre-computed the OTU-wise similarity matrices you also require
+
+* rpy2
+* kebabs (Biocondutor)
+* Biostrings (Bioconductor)
+
+The code is test aginst the package versions in [requirements](requirements.txt).
+
+# Functionality
+
+Please see the [examples](examples) for tutorials on
+
+* (Gaussian process regression)[examples/Supervised learning with GPs.ipynb] using string kernels, including hyperparameter selection
+* (The kernel two-sample test)[examples/MMD two-sample testing.ipynb] using string kernels
+* (Computing string kernels)[examples/Computing String Kernels.ipynb] in `StringPhylo`.
 
 # Relevant Citations
 
