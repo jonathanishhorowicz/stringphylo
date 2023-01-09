@@ -46,14 +46,68 @@ def requires_kebabs(func):
 
 @requires_kebabs
 def spectrum_kernel(k=3, normalized=True, exact=True, **kwargs):
+    """Initalise a spectrum kernel with a given k-mer length.
+
+    The key arguments are exposed. This function returns an R object. See
+    https://rdrr.io/bioc/kebabs/man/gappyPairKernel.html for the
+    relevant documentation and description of the remaining arguments
+
+    Args:
+        k (int): k-mer length (maximum allowed value is 30)
+        normalized (bool): whether to normalise the S matrix to ensure the diagonal 
+                           is equal to 1
+        exact (bool): whether to assume the representative sequences are exact
+
+    Returns:
+        A kernel object (of type py2.robjects.functions.SignatureTranslatedFunction). To be 
+        passed to compute_Smat to compute OTU-wise similarities.
+
+    """
     return kebabs.spectrumKernel(k=k, normalized=normalized, exact=exact, **kwargs)
 
 @requires_kebabs
 def gappy_pair_kernel(k=3, m=1, normalized=True, exact=True, **kwargs):
+    """Initalise a gappy pair kernel with a given k-mer length and number of gaps.
+
+    The key arguments are exposed. This function returns an R object. See
+    https://rdrr.io/bioc/kebabs/man/gappyPairKernel.html for the
+    relevant documentation and description of the remaining arguments
+
+    Args:
+        k (int): k-mer length (maximum allowed value is 15)
+        g (int): number of gaps 
+        normalized (bool): whether to normalise the S matrix to ensure the diagonal 
+                           is equal to 1
+        exact (bool): whether to assume the representative sequences are exact
+
+    Returns:
+        A kernel object (of type py2.robjects.functions.SignatureTranslatedFunction). To be 
+        passed to compute_Smat to compute OTU-wise similarities.
+
+    """
     return kebabs.gappyPairKernel(k=k, m=m, normalized=normalized, exact=exact, **kwargs)
 
 @requires_kebabs
 def mismatch_kernel(k=3, m=1, normalized=True, exact=True, **kwargs):
+    """Initalise a mismatch pair kernel with a given k-mer length and number of mismatches.
+
+    The key arguments are exposed. This function returns an R object. See
+    https://rdrr.io/bioc/kebabs/man/gappyPairKernel.html for the
+    relevant documentation and description of the remaining arguments
+
+    Args:
+        k (int): k-mer length (maximum allowed value is 15)
+        m (int): number of mismatches. Increasing this above 3 will increase the computation
+                 time significantly.
+        normalized (bool): whether to normalise the S matrix to ensure the diagonal 
+                           is equal to 1
+        exact (bool): whether to assume the representative sequences are exact
+
+    Returns:
+        A kernel object (of type py2.robjects.functions.SignatureTranslatedFunction). To be 
+        passed to compute_Smat to compute OTU-wise similarities.
+
+    """
     return kebabs.mismatchKernel(k=k, m=m, normalized=normalized, exact=exact, **kwargs)
 
 @requires_kebabs
